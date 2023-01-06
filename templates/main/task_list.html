@@ -7,8 +7,19 @@
     <title>Authentication</title>
 </head>
 <body>
-    <button type="submit"><a href="/signup">SignUp</a></button>
-    <button type="submit"><a href="/signin">SignIn</a></button>
     <button type="submit"><a href="/signup">SignOut</a></button>
+    
+    <table>
+        <tr>
+            <th>Task names:</th>
+        </tr>
+        {% for task in object_list %}
+        <tr>
+            <td>{{task.task_name}}</td>
+        </tr>
+        {% empty %}
+        <h3>No tasks currently</h3>
+        {% endfor %}
+    </table>
 </body>
 </html>
